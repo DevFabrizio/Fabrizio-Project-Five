@@ -1,0 +1,1 @@
+**This second README file will be used through development to describe the project and also as a notebook to keep track of tasks and feautures to implement**

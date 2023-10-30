@@ -1,5 +1,8 @@
 **This second README file will be used through development to describe the project and also as a notebook to keep track of tasks and feautures to implement**
 
+## Dataset Content
+
+This dataset is sourced at [Kaggle](https://www.kaggle.com/datasets/codeinstitute/housing-prices-data)and it comprises of a list of characteristics and features of houses in AMes, Iowa (U.S.A.). The features are divided in numerical and categorical type. The various features describe things like surface area in square feet for different sections of the house (wooden porch, 1st floor, etc) and quality of living conditions or construction status.
 
 | Column Name     | Description                                           | Range                |
 |-----------------|-------------------------------------------------------|-----------------------|
@@ -28,3 +31,4 @@
 | YearRemodAdd    | Remodel date (same as construction date if no remodeling or additions) | 1950 - 2010 |
 | SalePrice       | Sale Price                                           | 34900 - 755000        |
 
+## Business Requirements

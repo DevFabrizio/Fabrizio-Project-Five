@@ -108,4 +108,21 @@ The business requirements established with Lydia Doe, after the initial meeting 
 * Feature importance
 * Pipeline performance
 
+# Additional
 
+The process for the hyperparameter optimization was the following:
+
+* select hyperparameters from the Churnometer Walkthrough Project
+* Increase Cross Validation Folds from 5 to 20
+* Initial hyperparameters: 
+  * 'model__n_estimators': [10, 50, 100, 200, 300],
+    'model__max_depth': [None, 10, 20, 30],
+    'model__min_samples_split': [2, 5, 10, 20]
+
+* New hyperparameters: 
+  * 'model__n_estimators': [10, 50, 100],
+    'model__max_depth': [10, 20, 30],
+    'model__min_samples_split': [2, 5, 10, 20]
+
+* Decrease Cross Validation Folds from 20 to 5
+* Set the threshold value for the Smart Correlated Selection from 0.5 to 0.8

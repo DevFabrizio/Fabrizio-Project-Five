@@ -2,7 +2,7 @@
 
 ## Dataset Content
 
-This dataset is sourced at [Kaggle](https://www.kaggle.com/datasets/codeinstitute/housing-prices-data)and it comprises of a list of characteristics and features of houses in AMes, Iowa (U.S.A.). The features are divided in numerical and categorical type. The various features describe things like surface area in square feet for different sections of the house (wooden porch, 1st floor, etc) and quality of living conditions or construction status.
+This dataset is sourced at [Kaggle](https://www.kaggle.com/datasets/codeinstitute/housing-prices-data) and it comprises of a list of characteristics and features of houses in AMes, Iowa (U.S.A.). The features are divided in numerical and categorical type. The various features describe things like surface area in square feet for different sections of the house (wooden porch, 1st floor, etc) and quality of living conditions or construction status.
 
 | Column Name     | Description                                           | Range                |
 |-----------------|-------------------------------------------------------|-----------------------|
@@ -43,7 +43,7 @@ The business requirements established with Lydia Doe, after the initial meeting 
 
 * 1 - There should be a good correlation with the quality of the construction with Sale Price
   * A Correlation study can help in this investigation
-* 2 - Within the features we should be able to identify a hierarchy for the correlated features
+* 2 - Within the features we should be able to identify a hierarchy for the correlation of the features
   * A Correlation study can help in this investigation
 
 ## The rationale to map the business requirements to the Data Visualizations and ML tasks
@@ -54,9 +54,10 @@ The business requirements established with Lydia Doe, after the initial meeting 
   * We will plot the main variables against Sale Price to visualize insights.
 
 * **Business Requirement 2:** Regression Model
-* We will clean and feature engineer the dataset according to the necessity of the regression model
+* We will clean and feature engineer the dataset according to the necessity of the regression model and dataset
 * We will split the dataset into train and test set
 * We will train and analyze the performance of the model
+* We will generate plots to visually describe out results
 
 ## ML Business Case
 
@@ -67,16 +68,15 @@ The business requirements established with Lydia Doe, after the initial meeting 
 #### Regression Model
 
 * We want an ML model to predict sale price for the inherited houses. The target variable is a continous number. 
-* The objective is to provide the customer with a price which will maximize her profit for the properties in her possession
+* The objective is to provide the customer with a price which will maximize her profit for the properties in her possession.
+* The target variable is the Sale Price
 * The model success metrics are
   * At least 0.75 for R2 score, on train and test set
   * The ML model is considered a failure if:
         * The perfomance for the R2 score is not met.
-* The output is defined as a continuous value for tenure in months. It is assumed that this model will predict tenure if the Predict Churn Classifier predicts 1 (yes for churn). If the prospect is online, the prospect will have already provided the input data via a form. If the prospect talks to a salesperson, the salesperson will interview to gather the input data and feed it into the App. The prediction is made on the fly (not in batches).
-* Heuristics: Due to the complexity of the task, a heuristic method for determining a price for the customer properties would be inefficient and definitely closer to guessworl.
+* The output will be a continuous value corresponding to the price for the given property. We are going to run the prediction in the app for Lydia, but she will be able to also input new data and get a prediction of any new property she might acquire in the future.
+* Heuristics: Due to the complexity of the task, a heuristic method for determining a price for the customer properties would be inefficient and definitely closer to guesswork.
 * The training data to fit the model comes from a public dataset. 
-
-
 
 ## Dashboard Design (Streamlit App User Interface)
 
@@ -89,17 +89,24 @@ The business requirements established with Lydia Doe, after the initial meeting 
 
 ### Page 2: Correlation Study for Sale Price
 
-* State business requirement 1
+* State business requirement 2
+* Textual explaination of the correlation levels
+* Checkbox: Show the plots for the correlation level for the single features
 
 ### Page 3: Sale Price prediction
 
 * State business requirement 2
+* Results of the ML pipeline on Lydia's houses
+* Input widgets for data prediction for any new property
 
 
 ### Page 4: Project Hypothesis and Validation
 
-* Before the analysis, we knew we wanted this page to describe each project hypothesis, the conclusions, and how we validated each. After the data analysis, we can report that:
-
+With this page we want to delineate the main hypotesis:
+* We suspect that the variable Overall Quality is indicative or directly proportional of the sale price.
+  * That is correct. Although it is important to remember that Overall Quality is not the only variable correlated with sale price. This means that different levels on the other variables can influence the final sale price even if Overall Quality is high.
+* We suspect that the Square Feet variables like: 1st Floor SF, 2nd Floor SF, Total Porch SF and similar might be correlated to the sale price.  
+  * This is partially true. Not all features which take square feet as a measure are strong predictors of the sale price.
 
 ### Page 5: Predict Sale Price
 

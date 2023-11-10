@@ -67,7 +67,7 @@ The business requirements established with Lydia Doe, after the initial meeting 
 
 #### Regression Model
 
-* We want an ML model to predict sale price for the inherited houses. The target variable is a continous number. 
+* We want an ML model to predict sale price for the inherited houses. The target variable is a continous number.
 * The objective is to provide the customer with a price which will maximize her profit for the properties in her possession.
 * The target variable is the Sale Price
 * The model success metrics are
@@ -76,7 +76,7 @@ The business requirements established with Lydia Doe, after the initial meeting 
         * The perfomance for the R2 score is not met.
 * The output will be a continuous value corresponding to the price for the given property. We are going to run the prediction in the app for Lydia, but she will be able to also input new data and get a prediction of any new property she might acquire in the future.
 * Heuristics: Due to the complexity of the task, a heuristic method for determining a price for the customer properties would be inefficient and definitely closer to guesswork.
-* The training data to fit the model comes from a public dataset. 
+* The training data to fit the model comes from a public dataset.
 
 ## Dashboard Design (Streamlit App User Interface)
 
@@ -99,10 +99,10 @@ The business requirements established with Lydia Doe, after the initial meeting 
 * Results of the ML pipeline on Lydia's houses
 * Input widgets for data prediction for any new property
 
-
 ### Page 4: Project Hypothesis and Validation
 
 With this page we want to delineate the main hypotesis:
+
 * We suspect that the variable Overall Quality is indicative or directly proportional of the sale price.
   * That is correct. Although it is important to remember that Overall Quality is not the only variable correlated with sale price. This means that different levels on the other variables can influence the final sale price even if Overall Quality is high.
 * We suspect that the Square Feet variables like: 1st Floor SF, 2nd Floor SF, Total Porch SF and similar might be correlated to the sale price.  
@@ -121,12 +121,12 @@ The process for the hyperparameter optimization was the following:
 
 * select hyperparameters from the Churnometer Walkthrough Project
 * Increase Cross Validation Folds from 5 to 20
-* Initial hyperparameters: 
+* Initial hyperparameters:
   * 'model__n_estimators': [10, 50, 100, 200, 300],
     'model__max_depth': [None, 10, 20, 30],
     'model__min_samples_split': [2, 5, 10, 20]
 
-* New hyperparameters: 
+* New hyperparameters:
   * 'model__n_estimators': [10, 50, 100],
     'model__max_depth': [10, 20, 30],
     'model__min_samples_split': [2, 5, 10, 20]

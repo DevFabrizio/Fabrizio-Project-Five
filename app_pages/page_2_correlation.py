@@ -69,3 +69,13 @@ def page_correlation_body():
                  " garage is NOT unfinished\n")
 
     st.markdown('#### Correlation Plots')
+    if st.checkbox('Heatmap'):
+        st.write("This image shows how the different variables are correlated"
+                 " together. In order to read it you need to take note of the"
+                 " sidebar. On it you'll find the colors mapped to the levels"
+                 " of the correlation. As I previously mentioned, the closer"
+                 " the value is to -1 or 1 the better is the correlation.")
+        st.image(
+                "/workspaces/Fabrizio-Project-Five/outputs"
+                "/images/corr_heatmap.png", width=1200)
+    

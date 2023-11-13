@@ -11,8 +11,8 @@ from app_pages import (
 
 def main():
     """
-    This function will run the app by creating a sidebar and based on the 
-    user's choice it will call the main function from that specific page and 
+    This function will run the app by creating a sidebar and based on the
+    user's choice it will call the main function from that specific page and
     display the contents of the page on the dashboard.
     """
     # creation of the sidebar in the dashboard with list of the pages
@@ -33,7 +33,7 @@ def main():
     elif page == "Pipeline":
         page_5_pipeline.page_pipeline_body()
 
-# this logic will allow the app to be ran when calling the "streamlit run 
+# this logic will allow the app to be ran when calling the "streamlit run
 # app.py" function
 
 

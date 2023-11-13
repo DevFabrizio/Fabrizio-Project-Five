@@ -53,7 +53,7 @@ def page_summary_body():
         "This page has all the information you need to navigate the contents"
         "of this app.\n\n"
         "On the left of the screen you'll find a button to toggle the sidebar."
-        "Once you have accessed the sidebar you'll find a list of all the" 
+        "Once you have accessed the sidebar you'll find a list of all the"
         "pages of this dashboard. The pages are organized like this:"
     )
     st.markdown(
@@ -71,7 +71,7 @@ def page_summary_body():
 
         "* **Prediction:**\n\n"
         "In this page you will be presented with the result of the prediction"
-        "for your inherited houses' sale prices. Below that you'll be also" 
+        "for your inherited houses' sale prices. Below that you'll be also"
         "able to input the information for other houses or properties and"
         "receive the predicted price.\n\n"
 
@@ -87,5 +87,5 @@ def page_summary_body():
         "Machine Learning Pipeline and the process used to achieve the desired"
         " metrics."
 
-        
+
     )

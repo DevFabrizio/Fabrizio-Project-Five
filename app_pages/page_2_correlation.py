@@ -44,30 +44,31 @@ def page_correlation_body():
                                 .sort_values(key=abs, ascending=False)[1:]
                                 .head(10))
         st.write(df_ohe_corr_spearman)
-        st.write("Now that we know our most correlated features we can" 
+        st.write("Now that we know our most correlated features we can"
                  "say that:\n\n"
 
-                 "- The price of a house increases with the increase of" 
+                 "- The price of a house increases with the increase of"
                  " Overall Quality\n"
-                 "- The price of a house increases with the increase of Ground" 
+                 "- The price of a house increases with the increase of Ground"
                  " Living Area (in square feet) when above grade\n"
-                 "- The price of a house increases when the year of" 
+                 "- The price of a house increases when the year of"
                  " construction is more recent\n"
-                 "- The price of a house increases with the increase of" 
+                 "- The price of a house increases with the increase of"
                  " Garage Area\n"
                  "- The price of a house increases when the Kitchen Quality is"
                  " NOT assesed as Typical/Average\n"
-                 "- The price of a house increases when the year of" 
+                 "- The price of a house increases when the year of"
                  " construction of the garage is more recent\n"
                  "- The price of a house increases when the basement surface"
                  " (measured in square feet) increases\n"
-                 "- The price of a house increases when the year of" 
+                 "- The price of a house increases when the year of"
                  " remodelling is more recent\n"
-                 "- The price of a house increases when the surface area of" 
+                 "- The price of a house increases when the surface area of"
                  " the 1st floor (measured in square feet) increases\n"
                  "- The price of a house increases when the state of the"
                  " garage is NOT unfinished\n")
-
+    # in this section we'll show the correlation plots for the 10
+    # most correlated variables
     st.markdown('#### Correlation Plots')
     if st.checkbox('Heatmap'):
         st.write("This image shows how the different variables are correlated"
@@ -76,6 +77,111 @@ def page_correlation_body():
                  " of the correlation. As I previously mentioned, the closer"
                  " the value is to -1 or 1 the better is the correlation.")
         st.image(
-                "/workspaces/Fabrizio-Project-Five/outputs"
-                "/images/corr_heatmap.png", width=1200)
-    
+            "/workspaces/Fabrizio-Project-Five/outputs"
+            "/images/corr_heatmap.png", width=1200)
+
+    if st.checkbox('1st Floor Squared Feet'):
+        st.write('In this plot we can clearly see that there is a moderate'
+                 " level of correlation with the sf area of the 1st floor."
+                 " Precisely we notice that when the surface area increases"
+                 " we get weaker level of correlation. This means that, in"
+                 " simple terms, bigger is not always better.")
+        st.image(
+            "/workspaces/Fabrizio-Project-Five/outputs"
+            "/images/correlation_1stFlrSF.png", width=1200)
+
+    if st.checkbox('Garage Area'):
+        st.write('In this plot we have a similar correlation dynamic as the'
+                 " previous one. The correlation gets weaker as the value of"
+                 " the squared feet of the area increases.")
+        st.image(
+            "/workspaces/Fabrizio-Project-Five/outputs"
+            "/images/correlation_GarageArea.png", width=1200)
+   
+    if st.checkbox("Garage Finish"):
+        st.write("Here we find a different plot. This is called a violin plot."
+                 " In this plot the we can also notice that the variable we"
+                 " are analyzing is wether the garage state is finished or not"
+                 "In this case we see way higher prices for few houses with"
+                 " finished garages but most of the other houses are around"
+                 "100K and 250k.")
+        st.image(
+            "/workspaces/Fabrizio-Project-Five/outputs"
+            "/images/correlation_GarageFinish_Unf.png", width=1200)
+
+    if st.checkbox("Year Built of the Garage"):
+        st.write("In this case the plot is showing us a slightly more linear"
+                 "correlation. We can still appreciate some outliers in the"
+                 "group but generally we see that the price increases if the"
+                 "garage is newer.")
+        st.image(
+            "/workspaces/Fabrizio-Project-Five/outputs"
+            "/images/correlation_GarageYrBlt.png", width=1200)
+
+    if st.checkbox("Squared Feet of Living Area Above Ground"):
+        st.write("This plot has similar correlation dynamics as our first plot"
+                 " The correlation is strong at first but after a certain"
+                 " threshold it gets weaker. We should be careful when drawing"
+                 " conclusions about the price. This variable gives us some"
+                 " insights but we need to take into considearation other"
+                 " factors before deciding a final selling price.")
+        st.image(
+            "/workspaces/Fabrizio-Project-Five/outputs"
+            "/images/correlation_GrLivArea.png", width=1200)
+
+    if st.checkbox("Average Kitchen Quality"):
+        st.write("Here we have another violin plot. We can see that the"
+                 " majority of the houses are priced around 200k. An curious"
+                 " fact is that the highest price for houses with average"
+                 " kitchens is just shy of 400k. This is a useful"
+                 " discriminatory value and it will allow us to make more"
+                 " precise decision based on the state of the kitchen in our"
+                 " properties.")
+        st.image(
+            "/workspaces/Fabrizio-Project-Five/outputs"
+            "/images/correlation_KitchenQual_TA.png", width=1200)
+
+    if st.checkbox("Overall Quality of the Property"):
+        st.write("Despite this being the variable that more than any other"
+                 "correlates to the final sale price, we notice an"
+                 "interesting trend. The better the higher the Overall Quality"
+                 " value, the more variation in final price. Obviously this"
+                 " metric is a summary of many others and it is in line with"
+                 " the other plots with similar metrics")
+        st.image(
+            "/workspaces/Fabrizio-Project-Five/outputs"
+            "/images/correlation_OverallQual.png", width=1200)
+
+    if st.checkbox("Squared Feet of the Basement"):
+        st.write("Similar to other plots we've seen, here we also notice that"
+                 " the correlation gets weaker when the value on the x axis"
+                 " increases. One thing we can see from this specific plot is"
+                 " that the price increases dramatically even with a relative"
+                 " small increase of the basement surface area.")
+        st.image(
+            "/workspaces/Fabrizio-Project-Five/outputs"
+            "/images/correlation_TotalBsmtSF.png", width=1200)
+
+    if st.checkbox("Construction Year of the House"):
+        st.write("This plot is posseses quite a few similarities to the one"
+                 " which shows the construction year for the garage. Here,"
+                 " thanks to the visual plot, we see that even some houses"
+                 " built in the past century can still retain an appreciable"
+                 " value. There is also the presence of many outlier values"
+                 " so careful consideration is advised when taking this metric"
+                 " in order to decide a final price.")
+        st.image(
+            "/workspaces/Fabrizio-Project-Five/outputs"
+            "/images/correlation_YearBuilt.png", width=1200)
+
+    if st.checkbox("Year of Remodeling"):
+        st.write("")
+        st.image(
+            "/workspaces/Fabrizio-Project-Five/outputs"
+            "/images/correlation_YearRemodAdd.png", width=1200)
+
+    if st.checkbox("Predictive Power Score Heatmap"):
+        st.image(
+            "/workspaces/Fabrizio-Project-Five/outputs"
+            "/images/pps_heatmap.png", width=1200)
+

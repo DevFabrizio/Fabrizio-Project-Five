@@ -33,8 +33,39 @@ def page_correlation_body():
     if st.checkbox('Dataset'):
         st.write('These are 10 rows from the pre-processed dataset')
         st.write(df_ohe.head(10))
-    
+
     # this section shows the sperman correlation
-    
+    st.write('We are going to show correlation with the Spearman method'
+             "This is just one of the available methods we have to calculate"
+             "correlations between two variables.")
+    if st.checkbox('Show correlation'):
+        df_ohe_corr_spearman = (df_ohe
+                                .corr(method='spearman')['SalePrice']
+                                .sort_values(key=abs, ascending=False)[1:]
+                                .head(10))
+        st.write(df_ohe_corr_spearman)
+        st.write("Now that we know our most correlated features we can" 
+                 "say that:\n\n"
 
+                 "- The price of a house increases with the increase of" 
+                 " Overall Quality\n"
+                 "- The price of a house increases with the increase of Ground" 
+                 " Living Area (in square feet) when above grade\n"
+                 "- The price of a house increases when the year of" 
+                 " construction is more recent\n"
+                 "- The price of a house increases with the increase of" 
+                 " Garage Area\n"
+                 "- The price of a house increases when the Kitchen Quality is"
+                 " NOT assesed as Typical/Average\n"
+                 "- The price of a house increases when the year of" 
+                 " construction of the garage is more recent\n"
+                 "- The price of a house increases when the basement surface"
+                 " (measured in square feet) increases\n"
+                 "- The price of a house increases when the year of" 
+                 " remodelling is more recent\n"
+                 "- The price of a house increases when the surface area of" 
+                 " the 1st floor (measured in square feet) increases\n"
+                 "- The price of a house increases when the state of the"
+                 " garage is NOT unfinished\n")
 
+    st.markdown('#### Correlation Plots')

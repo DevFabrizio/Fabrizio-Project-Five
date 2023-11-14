@@ -68,7 +68,7 @@ def page_correlation_body():
                  "- The price of a house increases when the state of the"
                  " garage is NOT unfinished\n")
     # in this section we'll show the correlation plots for the 10
-    # most correlated variables
+    # most correlated variables, a correlation heatmap and a pps heatmap
     st.markdown('#### Correlation Plots')
     if st.checkbox('Heatmap'):
         st.write("This image shows how the different variables are correlated"
@@ -97,7 +97,7 @@ def page_correlation_body():
         st.image(
             "/workspaces/Fabrizio-Project-Five/outputs"
             "/images/correlation_GarageArea.png", width=1200)
-   
+
     if st.checkbox("Garage Finish"):
         st.write("Here we find a different plot. This is called a violin plot."
                  " In this plot the we can also notice that the variable we"
@@ -175,13 +175,25 @@ def page_correlation_body():
             "/images/correlation_YearBuilt.png", width=1200)
 
     if st.checkbox("Year of Remodeling"):
-        st.write("")
+        st.write("As all other metrics where the construction year was taken"
+                 " into account, here too we see that the correlation is not"
+                 " the best but we can still see moderate levels. The values"
+                 " for the various years are indicative of the value of the"
+                 " property only to a certain extent. Lots of outliers tell us"
+                 " that we need to include insights from other variables when"
+                 " considering a final price.")
         st.image(
             "/workspaces/Fabrizio-Project-Five/outputs"
             "/images/correlation_YearRemodAdd.png", width=1200)
 
     if st.checkbox("Predictive Power Score Heatmap"):
+        st.write("This is another heatmap but it shows the correlations"
+                 " calculated with the Predictive Power Score method. This"
+                 " method is when we want to find correlations that might"
+                 " remain hidden when using conventional process like the"
+                 " Spearman method we've used for all of our previous"
+                 " correlations. In this heatmap is important to remember that"
+                 " even a 0.2 value for correlation is considered moderate.")
         st.image(
             "/workspaces/Fabrizio-Project-Five/outputs"
             "/images/pps_heatmap.png", width=1200)
-

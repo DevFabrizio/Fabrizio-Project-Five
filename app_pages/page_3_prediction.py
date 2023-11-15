@@ -40,4 +40,6 @@ def page_prediction_body():
     
     if st.button(label='Show Predicted Prices'):
         predicted_prices = regression_pipeline.predict(df_new_houses)
+        predicted_prices = pd.Series(predicted_prices).astype(int)
+
         st.write(predicted_prices)

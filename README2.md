@@ -134,3 +134,16 @@ The process for the hyperparameter optimization was the following:
 
 - Decrease Cross Validation Folds from 20 to 5
 - Set the threshold value for the Smart Correlated Selection from 0.5 to 0.8
+
+### Bugs
+
+During the development of page 3 of the streamlit app I noticed that my ML
+pipeline couldn't predict on the inherited houses dataset. This was because I
+had previously feature engineered the original dataset by one hot encoding the 
+categorical variables. I did this in order to run the correlation studies since
+the correlation functions need to have numerical data. When I used the pipeline
+on the inherited houses dataset the categorical features were not one hot 
+encoded. To fix this I just added the Ordinal Encoder to my Pipeline. This also
+created a cascade of other bugs for which I had to run the notebook and modify
+where I placed the code to save the train and test set and where I saved the pi
+pipeline.

@@ -70,6 +70,7 @@ def page_correlation_body():
     # in this section we'll show the correlation plots for the 10
     # most correlated variables, a correlation heatmap and a pps heatmap
     st.markdown('#### Correlation Plots')
+    st.write("---")
     if st.checkbox('Heatmap'):
         st.write("This image shows how the different variables are correlated"
                  " together. In order to read it you need to take note of the"

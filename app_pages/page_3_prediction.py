@@ -24,16 +24,6 @@ def page_prediction_body():
         "/house-price/inherited_houses.csv")
     st.dataframe(data=df_new_houses)
 
-    # Here I will one hot encode the categorical vars for the new df
-    categorical_cols = []
-
-    for col in df_new_houses.columns:
-        if df_new_houses[col].dtype == 'object':
-            categorical_cols.append(col)
-    categorical_cols
-    encoder = OneHotEncoder(variables=categorical_cols, drop_last=False)
-    df_new_houses_ohe = encoder.fit_transform(df_new_houses)
-
     # Now I will load the regression pipeline and predict the prices
     regression_pipeline = joblib.load(
         "outputs/ml_pipeline/predict_saleprice/regressor_pipeline.pkl")

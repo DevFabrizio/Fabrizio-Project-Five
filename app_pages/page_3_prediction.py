@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import joblib
-from feature_engine.encoding import OneHotEncoder
 
 
 def page_prediction_body():
@@ -13,7 +12,7 @@ def page_prediction_body():
     st.write('The following is an overview of the dataset. At the top you will'
              " find the name of the columns with the respective values.")
     df = pd.read_csv(
-        'outputs/dataset/collection/feature_engineered_dataset.csv')
+        'outputs/dataset/collection/clean_dataset.csv')
     st.dataframe(data=df)
 
     st.markdown("### This is the data frame with the data from the inherited"
@@ -33,13 +32,13 @@ def page_prediction_body():
         predicted_prices = pd.Series(predicted_prices).astype(int)
 
         st.write(predicted_prices)
-    
+
     # This df is where I will store the inputs from the widgets
     X_live = pd.DataFrame()
 
     # All the input necessary to fit the data to the ML pipeline.
     col1, col2, col3, col4 = st.beta_columns(4)
-   
+    col5, col6, col7, col8 = st.beta_columns(4)
     with col1:
         feature = '1stFlrSF'
         st.number_input(
@@ -64,13 +63,12 @@ def page_prediction_body():
             format='%f'
         )
 
-    # with col4:
-    #     feature = 'BsmtExposure'
-    #     st.selectbox(
-    #         label="Basement Exposure",
-    #         options=df_new_houses[feature].unique()
+    with col4:
+        feature = 'BsmtExposure'
+        st.selectbox(
+            label="Basement Exposure",
+            options=df[feature].unique()
             
-    #     )
-    # In this widget you need to load the clean_dataset and assign the options
-    # in the basement exposure column to the options of the widget so that the 
-    # user will be able to select based on the specific case
+        )
+    
+    

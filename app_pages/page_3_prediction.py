@@ -72,9 +72,9 @@ def page_prediction_body():
         st.selectbox(
             label="Basement Exposure",
             options=df[feature].unique()
-           
+
         )
-  
+
     with col5:
         feature = 'BsmtFinSF1'
         st.number_input(
@@ -117,6 +117,74 @@ def page_prediction_body():
         feature = 'GarageFinish'
         st.selectbox(
             label='State of the Garage',
+            options=['RFn', 'Unf', 'Fin', 'None']
+        )
+
+    with col11:
+        feature = 'GarageYrBlt'
+        st.number_input(
+            label='Year of garage construction',
+            min_value=1850,
+            max_value=2024,
+            value=1994,
+            format='%d'
+        ) 
+    
+    with col12:
+        feature = 'GrLivArea'
+        st.number_input(
+            label='Sq. ft. of living area above ground',
+            min_value=0,
+            max_value=5000,
+            value=int(df[feature].median())
+        )
+
+    with col13:
+        feature = 'KitchenQual'
+        st.selectbox(
+            label='Quality of the Kitchen',
             options=df[feature].unique()
         )
+
+    with col14:
+        feature = 'LotArea'
+        st.number_input(
+            label='Lot size in Sq ft.',
+            min_value=1000,
+            max_value=200000,
+            format='%d',
+            value=25000
+        )
+
+    with col15:
+        feature = 'LotFrontage'
+        st.number_input(
+            label='Feet of street adjacent to the property',
+            min_value=1,
+            max_value=10000
+        )
     
+    with col16:
+        feature = 'MasVnrArea'
+        st.number_input(
+            label='Masonry veneer area in square feet',
+            min_value=0,
+            max_value=20000
+        )
+
+    with col17:
+        feature = 'OpenPorchSF'
+        st.number_input(
+            label='Sq ft of open porch',
+            min_value=0,
+            max_value=15000
+        )
+    
+    with col18:
+        feature = 'OverallCond'
+        st.number_input(
+            label='Overall Conditions (1-10)',
+            min_value=1,
+            max_value=10,
+            format='%d'
+        )

@@ -37,7 +37,8 @@ def page_prediction_body():
     # This df is where I will store the inputs from the widgets
     X_live = pd.DataFrame()
 
-    col1, col2, col3, col4 = st.columns(4)
+    # All the input necessary to fit the data to the ML pipeline.
+    col1, col2, col3, col4 = st.beta_columns(4)
    
     with col1:
         feature = '1stFlrSF'
@@ -46,3 +47,30 @@ def page_prediction_body():
             value=int(df_new_houses[feature].median()),
             format='%d'
         )
+
+    with col2:
+        feature = '2ndFlrSF'
+        st.number_input(
+            label="2nd Floor Square Feet",
+            value=float(df_new_houses[feature].median()),
+            format='%f'
+        )
+
+    with col3:
+        feature = 'BedroomAbvGr'
+        st.number_input(
+            label="Bedrooms Above Grade (not Basement)",
+            value=0.0,
+            format='%f'
+        )
+
+    # with col4:
+    #     feature = 'BsmtExposure'
+    #     st.selectbox(
+    #         label="Basement Exposure",
+    #         options=df_new_houses[feature].unique()
+            
+    #     )
+    # In this widget you need to load the clean_dataset and assign the options
+    # in the basement exposure column to the options of the widget so that the 
+    # user will be able to select based on the specific case

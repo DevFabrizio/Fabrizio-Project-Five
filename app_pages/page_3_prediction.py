@@ -33,3 +33,16 @@ def page_prediction_body():
         predicted_prices = pd.Series(predicted_prices).astype(int)
 
         st.write(predicted_prices)
+    
+    # This df is where I will store the inputs from the widgets
+    X_live = pd.DataFrame()
+
+    col1, col2, col3, col4 = st.columns(4)
+   
+    with col1:
+        feature = '1stFlrSF'
+        st.number_input(
+            label="1st Floor Square Feet",
+            value=int(df_new_houses[feature].median()),
+            format='%d'
+        )

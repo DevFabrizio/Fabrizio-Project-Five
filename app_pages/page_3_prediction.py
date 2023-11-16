@@ -36,9 +36,13 @@ def page_prediction_body():
     # This df is where I will store the inputs from the widgets
     X_live = pd.DataFrame()
 
-    # All the input necessary to fit the data to the ML pipeline.
+    # All the input widgets necessary to fit the data to the ML pipeline.
     col1, col2, col3, col4 = st.beta_columns(4)
     col5, col6, col7, col8 = st.beta_columns(4)
+    col9, col10, col11, col12 = st.beta_columns(4)
+    col13, col14, col15, col16 = st.beta_columns(4)
+    col17, col18, col19, col20 = st.beta_columns(4)
+    col21, col22, col23 = st.beta_columns(3)
     with col1:
         feature = '1stFlrSF'
         st.number_input(
@@ -68,7 +72,51 @@ def page_prediction_body():
         st.selectbox(
             label="Basement Exposure",
             options=df[feature].unique()
-            
+           
+        )
+  
+    with col5:
+        feature = 'BsmtFinSF1'
+        st.number_input(
+            label='Type 1 finished square feet',
+            value=int(df_new_houses[feature].median()),
+            format='%d'
+        )
+
+    with col6:
+        feature = 'BsmtFinType1'
+        st.selectbox(
+            label='Rating of basement finished area',
+            options=df[feature].unique()
+        )
+
+    with col7:
+        feature = 'BsmtUnfSF'
+        st.number_input(
+            label='Unfinished square ft. of basement area',
+            value=int(df[feature].median()),
+            format='%d'
+        )
+
+    with col8:
+        feature = 'EnclosedPorch'
+        st.number_input(
+            label='Enclosed Porch area in sq. ft.',
+            value=df[feature].median()
+        )
+
+    with col9:
+        feature = 'GarageArea'
+        st.number_input(
+            label='Square Feet of Garage',
+            value=int(df[feature].median()),
+            format='%d'
         )
     
+    with col10:
+        feature = 'GarageFinish'
+        st.selectbox(
+            label='State of the Garage',
+            options=df[feature].unique()
+        )
     

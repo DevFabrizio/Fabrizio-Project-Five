@@ -1,4 +1,5 @@
 import streamlit as st
+import numpy as np
 import pandas as pd
 import joblib
 
@@ -128,8 +129,8 @@ def page_prediction_body():
             max_value=2024,
             value=1994,
             format='%d'
-        ) 
-    
+        )
+
     with col12:
         feature = 'GrLivArea'
         st.number_input(
@@ -163,7 +164,7 @@ def page_prediction_body():
             min_value=1,
             max_value=10000
         )
-    
+
     with col16:
         feature = 'MasVnrArea'
         st.number_input(
@@ -179,12 +180,50 @@ def page_prediction_body():
             min_value=0,
             max_value=15000
         )
-    
+
     with col18:
         feature = 'OverallCond'
-        st.number_input(
+        st.selectbox(
             label='Overall Conditions (1-10)',
-            min_value=1,
-            max_value=10,
+            options=np.arange(1, 11)
+        )
+
+    with col19:
+        feature = 'OverallQual'
+        st.selectbox(
+            label='Overall Quality of the house (1 to 10)',
+            options=np.arange(1, 11)
+        )
+
+    with col20:
+        feature = 'TotalBsmtSF'
+        st.number_input(
+            label='Sq ft of the basement',
+            min_value=0,
+            max_value=20000,
+            value=1000,
             format='%d'
+        )
+
+    with col21:
+        feature = 'WoodDeckSF'
+        st.number_input(
+            label='Sq ft of the wood deck',
+            min_value=10,
+            max_value=20000,
+            value=500
+        )
+
+    with col22:
+        feature = 'YearBuilt'
+        st.selectbox(
+            label='Year of construction',
+            options=np.arange(1800, 2025)
+        )
+
+    with col23:
+        feature = 'YearRemodAdd'
+        st.selectbox(
+            label='Year of remodeling (same as construction if no remodeling)',
+            options=np.arange(1800, 2025)
         )

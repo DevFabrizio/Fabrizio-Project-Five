@@ -150,7 +150,7 @@ pipeline.
 
 - During the development of page 3 I noticed that when placing a series of input
 widgets inside a conditional block (if statement) the app would just re-run the
-page once the user input the first few data points. In order to fix that I 
+page once the user input the first few data points. In order to fix that I
 explored the possibility to add a streamlit session state in order to store all
 the results from the input widgets in an object and to change that object into
 a pandas dataframe. In the end I simply removed the conditional statement and 

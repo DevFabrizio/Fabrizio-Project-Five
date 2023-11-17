@@ -137,7 +137,7 @@ The process for the hyperparameter optimization was the following:
 
 ### Bugs
 
-During the development of page 3 of the streamlit app I noticed that my ML
+- During the development of page 3 of the streamlit app I noticed that my ML
 pipeline couldn't predict on the inherited houses dataset. This was because I
 had previously feature engineered the original dataset by one hot encoding the 
 categorical variables. I did this in order to run the correlation studies since
@@ -147,3 +147,11 @@ encoded. To fix this I just added the Ordinal Encoder to my Pipeline. This also
 created a cascade of other bugs for which I had to run the notebook and modify
 where I placed the code to save the train and test set and where I saved the pi
 pipeline.
+
+- During the development of page 3 I noticed that when placing a series of input
+widgets inside a conditional block (if statement) the app would just re-run the
+page once the user input the first few data points. In order to fix that I 
+explored the possibility to add a streamlit session state in order to store all
+the results from the input widgets in an object and to change that object into
+a pandas dataframe. In the end I simply removed the conditional statement and 
+the page worked just fine.

@@ -29,4 +29,12 @@ def page_hypothesis_body():
                 " 'Sale Price'")
     st.write('---')
     st.write("Now let's take a look at which features were recognized by the"
-             " machine learning model to be the best predictors of 'Sale Price")
+             " machine learning model to be the best predictors of"
+             " 'Sale Price'")
+    st.image(
+        'outputs/ml_pipeline/predict_saleprice/v1/features_importance.png')
+    st.markdown("**In this plot the features are:**")
+    st.write("- Total Basement Square Feet\n"
+             "- Square ft. of above ground living area\n"
+             "- Kitchen Quality\n"
+             "- Year of remodelling")

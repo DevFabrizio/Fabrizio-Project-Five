@@ -38,3 +38,16 @@ def page_hypothesis_body():
              "- Square ft. of above ground living area\n"
              "- Kitchen Quality\n"
              "- Year of remodelling")
+    st.subheader("Comparisons and Conclusions")
+    st.write("From the plot we can see that the model didn't recognize the"
+             " feature 'Overall Quality' as a strong predictor of"
+             " 'Sale Price'. However we have two features which track a"
+             " square feet value, In particular the 'Total basement square"
+             " feet' and 'Square Feet of living area above ground'. It is safe"
+             " to say that 'Kitchen Quality' should have been expected to be"
+             " a determining factor in our initial anylysis. On the same note"
+             " the same can be said for the 'Year of remodelling' feature."
+             " In conclusion we can safely assume that our initial hypothesis"
+             " was only partially correct and that the model showed us some"
+             " features that were overall better predictors of the target"
+             " value of 'Sale Price'.")

@@ -78,8 +78,7 @@ def page_correlation_body():
                  " of the correlation. As I previously mentioned, the closer"
                  " the value is to -1 or 1 the better is the correlation.")
         st.image(
-            "/workspaces/Fabrizio-Project-Five/outputs"
-            "/images/corr_heatmap.png", width=1200)
+            "outputs/images/corr_heatmap.png", width=1200)
 
     if st.checkbox('1st Floor Squared Feet'):
         st.write('In this plot we can clearly see that there is a moderate'
@@ -88,16 +87,14 @@ def page_correlation_body():
                  " we get weaker level of correlation. This means that, in"
                  " simple terms, bigger is not always better.")
         st.image(
-            "/workspaces/Fabrizio-Project-Five/outputs"
-            "/images/correlation_1stFlrSF.png", width=1200)
+            "outputs/images/correlation_1stFlrSF.png", width=1200)
 
     if st.checkbox('Garage Area'):
         st.write('In this plot we have a similar correlation dynamic as the'
                  " previous one. The correlation gets weaker as the value of"
                  " the squared feet of the area increases.")
         st.image(
-            "/workspaces/Fabrizio-Project-Five/outputs"
-            "/images/correlation_GarageArea.png", width=1200)
+            "outputs/images/correlation_GarageArea.png", width=1200)
 
     if st.checkbox("Garage Finish"):
         st.write("Here we find a different plot. This is called a violin plot."
@@ -107,8 +104,7 @@ def page_correlation_body():
                  " finished garages but most of the other houses are around"
                  "100K and 250k.")
         st.image(
-            "/workspaces/Fabrizio-Project-Five/outputs"
-            "/images/correlation_GarageFinish_Unf.png", width=1200)
+            "outputs/images/correlation_GarageFinish_Unf.png", width=1200)
 
     if st.checkbox("Year Built of the Garage"):
         st.write("In this case the plot is showing us a slightly more linear"
@@ -116,8 +112,7 @@ def page_correlation_body():
                  "group but generally we see that the price increases if the"
                  "garage is newer.")
         st.image(
-            "/workspaces/Fabrizio-Project-Five/outputs"
-            "/images/correlation_GarageYrBlt.png", width=1200)
+            "outputs/images/correlation_GarageYrBlt.png", width=1200)
 
     if st.checkbox("Squared Feet of Living Area Above Ground"):
         st.write("This plot has similar correlation dynamics as our first plot"
@@ -127,8 +122,7 @@ def page_correlation_body():
                  " insights but we need to take into considearation other"
                  " factors before deciding a final selling price.")
         st.image(
-            "/workspaces/Fabrizio-Project-Five/outputs"
-            "/images/correlation_GrLivArea.png", width=1200)
+            "outputs/images/correlation_GrLivArea.png", width=1200)
 
     if st.checkbox("Average Kitchen Quality"):
         st.write("Here we have another violin plot. We can see that the"
@@ -139,8 +133,7 @@ def page_correlation_body():
                  " precise decision based on the state of the kitchen in our"
                  " properties.")
         st.image(
-            "/workspaces/Fabrizio-Project-Five/outputs"
-            "/images/correlation_KitchenQual_TA.png", width=1200)
+            "outputs/images/correlation_KitchenQual_TA.png", width=1200)
 
     if st.checkbox("Overall Quality of the Property"):
         st.write("Despite this being the variable that more than any other"
@@ -150,8 +143,7 @@ def page_correlation_body():
                  " metric is a summary of many others and it is in line with"
                  " the other plots with similar metrics")
         st.image(
-            "/workspaces/Fabrizio-Project-Five/outputs"
-            "/images/correlation_OverallQual.png", width=1200)
+            "outputs/images/correlation_OverallQual.png", width=1200)
 
     if st.checkbox("Squared Feet of the Basement"):
         st.write("Similar to other plots we've seen, here we also notice that"
@@ -160,8 +152,7 @@ def page_correlation_body():
                  " that the price increases dramatically even with a relative"
                  " small increase of the basement surface area.")
         st.image(
-            "/workspaces/Fabrizio-Project-Five/outputs"
-            "/images/correlation_TotalBsmtSF.png", width=1200)
+            "outputs/images/correlation_TotalBsmtSF.png", width=1200)
 
     if st.checkbox("Construction Year of the House"):
         st.write("This plot is posseses quite a few similarities to the one"
@@ -172,8 +163,7 @@ def page_correlation_body():
                  " so careful consideration is advised when taking this metric"
                  " in order to decide a final price.")
         st.image(
-            "/workspaces/Fabrizio-Project-Five/outputs"
-            "/images/correlation_YearBuilt.png", width=1200)
+            "outputs/images/correlation_YearBuilt.png", width=1200)
 
     if st.checkbox("Year of Remodeling"):
         st.write("As all other metrics where the construction year was taken"
@@ -184,8 +174,7 @@ def page_correlation_body():
                  " that we need to include insights from other variables when"
                  " considering a final price.")
         st.image(
-            "/workspaces/Fabrizio-Project-Five/outputs"
-            "/images/correlation_YearRemodAdd.png", width=1200)
+            "outputs/images/correlation_YearRemodAdd.png", width=1200)
 
     if st.checkbox("Predictive Power Score Heatmap"):
         st.write("This is another heatmap but it shows the correlations"
@@ -196,5 +185,4 @@ def page_correlation_body():
                  " correlations. In this heatmap is important to remember that"
                  " even a 0.2 value for correlation is considered moderate.")
         st.image(
-            "/workspaces/Fabrizio-Project-Five/outputs"
-            "/images/pps_heatmap.png", width=1200)
+            "outputs/images/pps_heatmap.png", width=1200)

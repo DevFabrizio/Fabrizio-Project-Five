@@ -24,10 +24,10 @@ def page_correlation_body():
              " investigation after drawing some conclusions. Especially from"
              " the correlation of just 1 variable against another.")
     st.markdown("#### Spearman Correlation")
-
+    st.write('---')
     # This segment of code load shows the one hot encoded dataset. (10 samples)
     df_ohe = pd.read_csv(
-        '/workspaces/Fabrizio-Project-Five/outputs/'
+        'outputs/'
         'dataset/collection/feature_engineered_dataset.csv'
     )
     if st.checkbox('Dataset'):

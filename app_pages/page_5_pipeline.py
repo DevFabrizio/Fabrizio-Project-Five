@@ -59,3 +59,11 @@ def page_pipeline_body():
     st.write('---')
     st.markdown("### Model Performance")
     st.image('outputs/ml_pipeline/predict_saleprice/model_performance.png')
+    st.markdown("**Train Set r2 Score** --------------- **Test Set r2"
+                " Score**\n\n"
+                "0.89 --------------------------------- 0.75\n\n")
+    st.write("In the image above we can see the model performance on train and"
+             " test set. We notice that with higher prices the accuracy of the"
+             " prediction actually decreases. With this information we should "
+             "consider being more careful when the model will predict a price "
+             "in a higher bracket.")

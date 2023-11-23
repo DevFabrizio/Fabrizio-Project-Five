@@ -6,6 +6,10 @@ import joblib
 
 def page_prediction_body():
     st.title('Machine Learning Prediction')
+    st.write('---')
+    st.success("### **The Machine Learning Pipeline is able to predict house"
+                " prices.**")
+    st.write("---")
     st.write("In this page we will show the predicted prices for Lydia's"
              " properties and we will also allow Lydia to run predictions on"
              " all other properties she might own or acquire in the future.")

@@ -1,4 +1,4 @@
-**This second README file will be used through development to describe the project and also as a notebook to keep track of tasks and feautures to implement**
+
 
 ## Dataset Content
 
@@ -100,7 +100,7 @@ The business requirements established with Lydia Doe, after the initial meeting 
 
 ### Page 4: Project Hypothesis and Validation
 
-With this page we want to delineate the main hypotesis:
+With this page we want to delineate the main hypothesis:
 
 - We suspect that the variable Overall Quality is indicative or directly proportional of the sale price.
   - That is correct. Although it is important to remember that Overall Quality is not the only variable correlated with sale price. This means that different levels on the other variables can influence the final sale price even if Overall Quality is high.
@@ -139,10 +139,10 @@ The process for the hyperparameter optimization was the following:
 
 - During the development of page 3 of the streamlit app I noticed that my ML
 pipeline couldn't predict on the inherited houses dataset. This was because I
-had previously feature engineered the original dataset by one hot encoding the 
+had previously feature engineered the original dataset by one hot encoding the
 categorical variables. I did this in order to run the correlation studies since
 the correlation functions need to have numerical data. When I used the pipeline
-on the inherited houses dataset the categorical features were not one hot 
+on the inherited houses dataset the categorical features were not one hot
 encoded. To fix this I just added the Ordinal Encoder to my Pipeline. This also
 created a cascade of other bugs for which I had to run the notebook and modify
 where I placed the code to save the train and test set and where I saved the pi
@@ -153,5 +153,12 @@ widgets inside a conditional block (if statement) the app would just re-run the
 page once the user input the first few data points. In order to fix that I
 explored the possibility to add a streamlit session state in order to store all
 the results from the input widgets in an object and to change that object into
-a pandas dataframe. In the end I simply removed the conditional statement and 
+a pandas dataframe. In the end I simply removed the conditional statement and
 the page worked just fine.
+
+### Credits
+
+- In the Correlation study notebook I copied the mask shown below from the
+  seaborn documentation:
+   "mask = np.triu(np.ones_like(df_spearman_corr, dtype=bool))"
+   

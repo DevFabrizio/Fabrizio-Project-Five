@@ -8,7 +8,7 @@ def page_prediction_body():
     st.title('Machine Learning Prediction')
     st.write('---')
     st.success("### **The Machine Learning Pipeline is able to predict house"
-                " prices.**")
+               " prices.**")
     st.write("---")
     st.write("In this page we will show the predicted prices for Lydia's"
              " properties and we will also allow Lydia to run predictions on"

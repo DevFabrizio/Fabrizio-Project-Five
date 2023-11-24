@@ -1,4 +1,4 @@
-## Business Requirements
+# Business Requirements
 
 As a good friend, you are requested by your friend, who has received an inheritance from a deceased great-grandfather located in Ames, Iowa, to help in maximising the sales price for the inherited properties.
 
@@ -37,13 +37,6 @@ This dataset is sourced at [Kaggle](https://www.kaggle.com/datasets/codeinstitut
 | YearBuilt     | Original construction date                                             | 1872 - 2010                                                                                                                   |
 | YearRemodAdd  | Remodel date (same as construction date if no remodeling or additions) | 1950 - 2010                                                                                                                   |
 | SalePrice     | Sale Price                                                             | 34900 - 755000                                                                                                                |
-
-## Business Requirements
-
-The business requirements established with Lydia Doe, after the initial meeting are the following:
-
-- The client is interested in discovering how house attributes correlate with sale prices. Therefore, the client expects data visualizations of the correlated variables against the sale price.
-- The client is interested in predicting the house sale prices from her 4 inherited houses, and any other house in Ames, Iowa.
 
 ## Hypothesis and how to validate?
 
@@ -92,6 +85,7 @@ The business requirements established with Lydia Doe, after the initial meeting 
   - Project Terms & Jargon
   - Describe Project Dataset
   - State Business Requirements
+  - Dashboard navigation guide
 
 ### Page 2: Correlation Study for Sale Price
 

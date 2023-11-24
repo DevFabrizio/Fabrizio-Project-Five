@@ -52,6 +52,8 @@ This dataset is sourced at [Kaggle](https://www.kaggle.com/datasets/codeinstitut
   - We will inspect the datset.
   - We will conduct a correlation study (Pearson and Spearman) to understand better how the variables are correlated to Sale Price.
   - We will plot the main variables against Sale Price to visualize insights.
+  - We will use the Predictive Power Score tool to investigate non linear correlations
+  - We will plot the findings from the PPS analysis in a heatmap
 
 - **Business Requirement 2:** Regression Model
 - We will clean and feature engineer the dataset according to the necessity of the regression model and dataset

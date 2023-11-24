@@ -141,6 +141,8 @@ The process for the hyperparameter optimization was the following:
 
 - Decrease Cross Validation Folds from 20 to 5
 - Set the threshold value for the Smart Correlated Selection from 0.5 to 0.8
+These changes allowed me to reach the 0.75 value on the r2 score for train and
+test set.
 
 ### Bugs
 
@@ -169,5 +171,5 @@ the page worked just fine.
   seaborn documentation:
    "mask = np.triu(np.ones_like(df_spearman_corr, dtype=bool))"
 
-- In the Correlation study notebook (cell 42) I copied the pps score code from 
+- In the Correlation study notebook (cell 42) I copied the pps score code from
   the Churnometer Walkthrough project.

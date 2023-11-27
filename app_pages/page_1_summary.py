@@ -9,12 +9,14 @@ def page_summary_body():
              " for your properties and also you will receive an in-depth study"
              " about the most important variables to consider when deciding a"
              " final price")
+
     st.success("The business requirement for this project is the following:"
-               "\nLydia Doe, as requested as a friend, to analyze and build a"
-               " dashboard where she will be able to see the predicted prices"
-               " for the houses she inherited in Ames, Iowa and to also be"
-               " able to predict the price for any other property she might "
-               "own in the area in the future.")
+               "\n\nLydia Doe, has requested as a friend, to analyze and build"
+               " a dashboard where she will be able to see the predicted"
+               " prices for the houses she inherited in Ames, Iowa and to"
+               " also be able to predict the price for any other property she"
+               " might own in the area in the future.")
+
     st.info('The dataset used for the development of this app was publicly'
             ' available on the famous Machine Learning Platform "Kaggle".\n'
             ' The following are the descriptions of the dataset variables.')

@@ -91,14 +91,14 @@ This dataset is sourced at [Kaggle](https://www.kaggle.com/datasets/codeinstitut
 
 ### Page 2: Correlation Study for Sale Price
 
-- State business requirement 2
+- This page answers the Business Requirements 1
 - General explaination for correlation (created for non-technical users)
 - Textual explaination of the correlation levels
 - Checkbox: Show the plots for the correlation level for the single features
 
 ### Page 3: Sale Price prediction
 
-- State business requirement 2
+- This page answers Business Requirements 2
 - Results of the ML pipeline on Lydia's houses
 - Input widgets for data prediction for any new property
 
@@ -118,7 +118,7 @@ With this page we want to delineate the main hypothesis:
 - Feature importance
 - Pipeline performance
 
-## Technologies used
+## Technologies Used
 This is a list of all the different technologies and libraries used in the project:
 - Python
 - Jupyter Notebooks

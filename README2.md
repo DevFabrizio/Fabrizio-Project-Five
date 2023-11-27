@@ -94,7 +94,7 @@ This dataset is sourced at [Kaggle](https://www.kaggle.com/datasets/codeinstitut
 - This page answers the Business Requirements 1
 - General explaination for correlation (created for non-technical users)
 - Textual explaination of the correlation levels
-- Checkbox: Show the plots for the correlation level for the single features
+- Checkbox: Show the plots for the correlation level for the single features. These plots are a visual representation of the Spearman correlation study which is shown in the checkbox above
 
 ### Page 3: Sale Price prediction
 
@@ -110,6 +110,8 @@ With this page we want to delineate the main hypothesis:
   - That is correct. Although it is important to remember that Overall Quality is not the only variable correlated with sale price. This means that different levels on the other variables can influence the final sale price even if Overall Quality is high.
 - We suspect that the Square Feet variables like: 1st Floor SF, 2nd Floor SF, Total Porch SF and similar might be correlated to the sale price.
   - This is partially true. Not all features which take square feet as a measure are strong predictors of the sale price.
+
+In this page a plot for the best feature found by the model is also shown. Along with the comparison and conclusion between the hypothesis and results.
 
 ### Page 5: Predict Sale Price
 

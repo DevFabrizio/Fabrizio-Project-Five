@@ -92,6 +92,7 @@ This dataset is sourced at [Kaggle](https://www.kaggle.com/datasets/codeinstitut
 ### Page 2: Correlation Study for Sale Price
 
 - State business requirement 2
+- General explaination for correlation (created for non-technical users)
 - Textual explaination of the correlation levels
 - Checkbox: Show the plots for the correlation level for the single features
 
@@ -117,7 +118,26 @@ With this page we want to delineate the main hypothesis:
 - Feature importance
 - Pipeline performance
 
-# Additional
+## Technologies used
+This is a list of all the different technologies and libraries used in the project:
+- Python
+- Jupyter Notebooks
+- Pandas
+- Numpy
+- Seaborn
+- Matplot
+- Power Predictive Score
+- Streamlit
+- Feature Engine
+- Sci-Kit Learn
+- XGBoost
+- Joblib
+- os
+- Git
+- GitHub
+- Codeanywhere (CDE)
+
+## Additional
 
 The process for the hyperparameter optimization was the following:
 
@@ -137,35 +157,35 @@ The process for the hyperparameter optimization was the following:
 
 - Decrease Cross Validation Folds from 20 to 5
 - Set the threshold value for the Smart Correlated Selection from 0.5 to 0.8
-These changes allowed me to reach the 0.75 value on the r2 score for train and
-test set.
+  These changes allowed me to reach the 0.75 value on the r2 score for train and
+  test set.
 
 ### Bugs
 
 - During the development of page 3 of the streamlit app I noticed that my ML
-pipeline couldn't predict on the inherited houses dataset. This was because I
-had previously feature engineered the original dataset by one hot encoding the
-categorical variables. I did this in order to run the correlation studies since
-the correlation functions need to have numerical data. When I used the pipeline
-on the inherited houses dataset the categorical features were not one hot
-encoded. To fix this I just added the Ordinal Encoder to my Pipeline. This also
-created a cascade of other bugs for which I had to run the notebook and modify
-where I placed the code to save the train and test set and where I saved the pi
-pipeline.
+  pipeline couldn't predict on the inherited houses dataset. This was because I
+  had previously feature engineered the original dataset by one hot encoding the
+  categorical variables. I did this in order to run the correlation studies since
+  the correlation functions need to have numerical data. When I used the pipeline
+  on the inherited houses dataset the categorical features were not one hot
+  encoded. To fix this I just added the Ordinal Encoder to my Pipeline. This also
+  created a cascade of other bugs for which I had to run the notebook and modify
+  where I placed the code to save the train and test set and where I saved the pi
+  pipeline.
 
 - During the development of page 3 I noticed that when placing a series of input
-widgets inside a conditional block (if statement) the app would just re-run the
-page once the user input the first few data points. In order to fix that I
-explored the possibility to add a streamlit session state in order to store all
-the results from the input widgets in an object and to change that object into
-a pandas dataframe. In the end I simply removed the conditional statement and
-the page worked just fine.
+  widgets inside a conditional block (if statement) the app would just re-run the
+  page once the user input the first few data points. In order to fix that I
+  explored the possibility to add a streamlit session state in order to store all
+  the results from the input widgets in an object and to change that object into
+  a pandas dataframe. In the end I simply removed the conditional statement and
+  the page worked just fine.
 
 ### Credits
 
 - In the Correlation study notebook I copied the mask shown below from the
   seaborn documentation:
-   "mask = np.triu(np.ones_like(df_spearman_corr, dtype=bool))"
+  "mask = np.triu(np.ones_like(df_spearman_corr, dtype=bool))"
 
 - In the Correlation study notebook (cell 42) I copied the pps score code from
   the Churnometer Walkthrough project.

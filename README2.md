@@ -118,7 +118,7 @@ In this page a plot for the best feature found by the model is also shown. Along
 - Considerations and conclusions after the pipeline is trained
 - Present ML pipeline steps
 - Feature importance
-- Pipeline performance
+- Pipeline performance plot. This shows the different performance of the model between the train and test set
 
 ## Technologies Used
 This is a list of all the different technologies and libraries used in the project:

@@ -64,32 +64,32 @@ def page_summary_body():
         " pages of this dashboard. The pages are organized like this:"
     )
     st.markdown(
-        "* **Summary:**\n\n"
+        "* **Quick Project Summary:**\n\n"
         "In this page you'll be able to get an overview of the dataset"
         " and what the specific columns in the dataset mean. You will also"
         " find instructions on how to use the dashboard.\n\n"
 
-        "* **Correlation:**\n\n"
+        "* **Sale Price Correlation Study:**\n\n"
         "In this page you will find the result of the correlation studies"
         " The correlation studies will show you how different variable in the"
         " dataset correlate with the target (Sale Price). In addition to that"
         " there will also be some plots and graphs present. These will help"
         " you visualize the correlation levels.\n\n"
 
-        "* **Prediction:**\n\n"
+        "* **House Price Prediction:**\n\n"
         "In this page you will be presented with the result of the prediction"
         " for your inherited houses' sale prices. Below that you'll be also"
         " able to input the information for other houses or properties and"
         " receive the predicted price.\n\n"
 
-        "* **Hypothesis:**\n\n"
+        "* **Project Hypothesis:**\n\n"
         "In this page you'll find a description of the initial hypothesis"
         " and the results of the comparison between the hypothesis and the"
         " actual data we obtained after the analysis. This page might contain"
         " technical language and it could be difficult to understand. The app"
         " will still be usable even for non-technical personnel.\n\n"
 
-        "* **Pipeline:**\n\n"
+        "* **ML Pipeline:**\n\n"
         "This page is strictly for technical personnel. It illustrates the"
         " Machine Learning Pipeline and the process used to achieve the"
         " desired metrics."

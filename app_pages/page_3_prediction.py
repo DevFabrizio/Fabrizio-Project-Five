@@ -61,16 +61,12 @@ def page_prediction_body():
     st.write('---')
 
     # All the input widgets necessary to fit the data to the ML pipeline.
-    col1, col2, col3, col4 = st.beta_columns(4)
-    col5, col6, col7, col8 = st.beta_columns(4)
-    col9, col10, col11, col12 = st.beta_columns(4)
-    col13, col14, col15, col16 = st.beta_columns(4)
-    col17, col18, col19, col20 = st.beta_columns(4)
-    col21, col22, col23 = st.beta_columns(3)
-
+    col1, col2, col3 = st.beta_columns(3)
+    col4, col5 = st.beta_columns(2)
+    
     # series of input widgets
    
-    with col9:
+    with col1:
         feature = 'GarageArea'
         widget = st.number_input(
             label='Square Feet of Garage',
@@ -79,7 +75,7 @@ def page_prediction_body():
         )
     X_live[feature] = widget
 
-    with col12:
+    with col2:
         feature = 'GrLivArea'
         widget = st.number_input(
             label='Sq. ft. of living area above ground',
@@ -89,7 +85,7 @@ def page_prediction_body():
         )
     X_live[feature] = widget
 
-    with col13:
+    with col3:
         feature = 'KitchenQual'
         widget = st.selectbox(
             label='Quality of the Kitchen',
@@ -97,7 +93,7 @@ def page_prediction_body():
         )
     X_live[feature] = widget
 
-    with col19:
+    with col4:
         feature = 'OverallQual'
         widget = st.selectbox(
             label='Overall Quality of the house (1 to 10)',
@@ -105,7 +101,7 @@ def page_prediction_body():
         )
     X_live[feature] = widget
 
-    with col20:
+    with col5:
         feature = 'TotalBsmtSF'
         widget = st.number_input(
             label='Sq ft of the basement',

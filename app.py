@@ -16,21 +16,21 @@ def main():
     display the contents of the page on the dashboard.
     """
     # creation of the sidebar in the dashboard with list of the pages
-    page = st.sidebar.radio("Choose a page", ["Summary",
-                                              "Correlation",
-                                              "Prediction",
-                                              "Hypothesis",
-                                              "Pipeline"])
+    page = st.sidebar.radio("Choose a page", ["Quick Project Summary",
+                                              "Sale Price Correlation Study",
+                                              "House Price Prediction",
+                                              "Project Hypothesis",
+                                              "ML Pipeline"])
 
-    if page == "Summary":
+    if page == "Quick Project Summary":
         page_1_summary.page_summary_body()
-    elif page == "Correlation":
+    elif page == "Sale Price Correlation Study":
         page_2_correlation.page_correlation_body()
-    elif page == "Prediction":
+    elif page == "House Price Prediction":
         page_3_prediction.page_prediction_body()
-    elif page == "Hypothesis":
+    elif page == "Project Hypothesis":
         page_4_hypothesis.page_hypothesis_body()
-    elif page == "Pipeline":
+    elif page == "ML Pipeline":
         page_5_pipeline.page_pipeline_body()
 
 # this logic will allow the app to be ran when calling the "streamlit run

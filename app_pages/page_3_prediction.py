@@ -32,9 +32,17 @@ def page_prediction_body():
 
     # Now I will load the regression pipeline and predict the prices
     regression_pipeline = joblib.load(
-        "outputs/ml_pipeline/predict_saleprice/regressor_pipeline.pkl")
+        "outputs/ml_pipeline/predict_saleprice/v1/regressor_pipeline.pkl")
 
     if st.button(label='Show Predicted Prices'):
+        most_important_features = [
+            'OverallQual',
+            'GrLivArea',
+            'KitchenQual',
+            'TotalBsmtSF',
+            'GarageArea'
+        ]
+        df_new_houses = df_new_houses.filter(most_important_features)
         predicted_prices = regression_pipeline.predict(df_new_houses)
         predicted_prices = pd.Series(predicted_prices).astype(int)
 
@@ -61,99 +69,12 @@ def page_prediction_body():
     col21, col22, col23 = st.beta_columns(3)
 
     # series of input widgets
-    with col1:
-        feature = '1stFlrSF'
-        widget = st.number_input(
-            label="1st Floor Square Feet",
-            value=int(df_new_houses[feature].median()),
-            format='%d'
-        )
-    X_live[feature] = widget
-
-    with col2:
-        feature = '2ndFlrSF'
-        widget = st.number_input(
-            label="2nd Floor Square Feet",
-            value=float(df_new_houses[feature].median()),
-            format='%f'
-        )
-    X_live[feature] = widget
-
-    with col3:
-        feature = 'BedroomAbvGr'
-        widget = st.number_input(
-            label="Bedrooms Above Grade (not Basement)",
-            value=0.0,
-            format='%f'
-        )
-    X_live[feature] = widget
-
-    with col4:
-        feature = 'BsmtExposure'
-        widget = st.selectbox(
-            label="Basement Exposure",
-            options=df[feature].unique()
-        )
-    X_live[feature] = widget
-
-    with col5:
-        feature = 'BsmtFinSF1'
-        widget = st.number_input(
-            label='Type 1 finished square feet',
-            value=int(df_new_houses[feature].median()),
-            format='%d'
-        )
-    X_live[feature] = widget
-
-    with col6:
-        feature = 'BsmtFinType1'
-        widget = st.selectbox(
-            label='Rating of basement finished area',
-            options=df[feature].unique()
-        )
-    X_live[feature] = widget
-
-    with col7:
-        feature = 'BsmtUnfSF'
-        widget = st.number_input(
-            label='Unfinished square ft. of basement area',
-            value=int(df[feature].median()),
-            format='%d'
-        )
-    X_live[feature] = widget
-
-    with col8:
-        feature = 'EnclosedPorch'
-        widget = st.number_input(
-            label='Enclosed Porch area in sq. ft.',
-            value=df[feature].median()
-        )
-    X_live[feature] = widget
-
+   
     with col9:
         feature = 'GarageArea'
         widget = st.number_input(
             label='Square Feet of Garage',
             value=int(df[feature].median()),
-            format='%d'
-        )
-    X_live[feature] = widget
-
-    with col10:
-        feature = 'GarageFinish'
-        widget = st.selectbox(
-            label='State of the Garage',
-            options=['RFn', 'Unf', 'Fin', 'None']
-        )
-    X_live[feature] = widget
-
-    with col11:
-        feature = 'GarageYrBlt'
-        widget = st.number_input(
-            label='Year of garage construction',
-            min_value=1850,
-            max_value=2024,
-            value=1994,
             format='%d'
         )
     X_live[feature] = widget
@@ -176,52 +97,6 @@ def page_prediction_body():
         )
     X_live[feature] = widget
 
-    with col14:
-        feature = 'LotArea'
-        widget = st.number_input(
-            label='Lot size in Sq ft.',
-            min_value=1000,
-            max_value=200000,
-            format='%d',
-            value=25000
-        )
-    X_live[feature] = widget
-
-    with col15:
-        feature = 'LotFrontage'
-        widget = st.number_input(
-            label='Feet of street adjacent to the property',
-            min_value=1,
-            max_value=10000
-        )
-    X_live[feature] = widget
-
-    with col16:
-        feature = 'MasVnrArea'
-        widget = st.number_input(
-            label='Masonry veneer area in square feet',
-            min_value=0,
-            max_value=20000
-        )
-    X_live[feature] = widget
-
-    with col17:
-        feature = 'OpenPorchSF'
-        widget = st.number_input(
-            label='Sq ft of open porch',
-            min_value=0,
-            max_value=15000
-        )
-    X_live[feature] = widget
-
-    with col18:
-        feature = 'OverallCond'
-        widget = st.selectbox(
-            label='Overall Conditions (1-10)',
-            options=np.arange(1, 11)
-        )
-    X_live[feature] = widget
-
     with col19:
         feature = 'OverallQual'
         widget = st.selectbox(
@@ -238,33 +113,6 @@ def page_prediction_body():
             max_value=20000,
             value=1000,
             format='%d'
-        )
-    X_live[feature] = widget
-
-    with col21:
-        feature = 'WoodDeckSF'
-        widget = st.number_input(
-            label='Sq ft of the wood deck',
-            min_value=10,
-            max_value=20000,
-            value=500
-        )
-    X_live[feature] = widget
-
-    with col22:
-        feature = 'YearBuilt'
-        widget = st.selectbox(
-            label='Year of construction',
-            options=np.arange(1800, 2025)
-        )
-    X_live[feature] = widget
-
-    with col23:
-        feature = 'YearRemodAdd'
-        widget = st.selectbox(
-            label='Year of remodeling (same as construction'
-                  'if no remodeling)',
-            options=np.arange(1800, 2025)
         )
     X_live[feature] = widget
 

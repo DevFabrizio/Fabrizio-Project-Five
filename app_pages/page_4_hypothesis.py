@@ -32,22 +32,34 @@ def page_hypothesis_body():
              " machine learning model to be the best predictors of"
              " 'Sale Price'")
     st.image(
-        'outputs/ml_pipeline/predict_saleprice/v1/features_importance.png')
+        'outputs/ml_pipeline/predict_saleprice/features_importance.png')
     st.markdown("**In this plot the features are:**")
     st.write("- Total Basement Square Feet\n"
              "- Square ft. of above ground living area\n"
+             "- Overall Quality of the property\n"
              "- Kitchen Quality\n"
-             "- Year of remodelling")
+             "- Garage Area")
     st.subheader("Comparisons and Conclusions")
-    st.write("From the plot we can see that the model didn't recognize the"
+    st.write("From the plot we can see that the model did recognize the"
              " feature 'Overall Quality' as a strong predictor of"
-             " 'Sale Price'. However we have two features which track a"
+             " 'Sale Price. We also have three features which track a"
              " square feet value, In particular the 'Total basement square"
-             " feet' and 'Square Feet of living area above ground'. It is safe"
+             " feet', 'Garage Area' and 'Square Feet of living area"
+             " above ground'. It is safe"
              " to say that 'Kitchen Quality' should have been expected to be"
-             " a determining factor in our initial anylysis. On the same note"
-             " the same can be said for the 'Year of remodelling' feature."
+             " a determining factor in our initial analysis."
              " In conclusion we can safely assume that our initial hypothesis"
              " was only partially correct and that the model showed us some"
              " features that were overall better predictors of the target"
-             " value of 'Sale Price'.")
+             " value of 'Sale Price'. In addition to that it is worthy of "
+             "notice that the features 'Wood Deck' and 'Open Porch' were "
+             "initially used in a preliminary run of the model training. These"
+             " two features had mostly missing data but in an attempt to "
+             "provide the model with more information I imputed the missing "
+             "data with the mean value for that feature. This solution proved"
+             " to be a mistake because it only generated unimportant noise "
+             "and the model performace was affected. After dropping these "
+             "features in a later run of the model tuning process I saw a good"
+             " increase in model performance. In this case our initial hypothe"
+             "sis cannot be either confirmed or denied due to the lack of valu"
+             "es for the given features.")

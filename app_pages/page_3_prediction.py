@@ -63,9 +63,9 @@ def page_prediction_body():
     # All the input widgets necessary to fit the data to the ML pipeline.
     col1, col2, col3 = st.beta_columns(3)
     col4, col5 = st.beta_columns(2)
-    
+
     # series of input widgets
-   
+
     with col1:
         feature = 'GarageArea'
         widget = st.number_input(

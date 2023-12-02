@@ -36,8 +36,14 @@ def page_correlation_body():
 
     # this section shows the sperman correlation
     st.write('We are going to show correlation with the Spearman method'
-             "This is just one of the available methods we have to calculate"
-             "correlations between two variables.")
+             " This is just one of the available methods we have to calculate"
+             " correlations between two variables. These plots that follow are"
+             " the result of the application of the correlation function "
+             "applied to all the variables of the dataset compared to the targ"
+             "et variable 'Sale Price'. I only included the 10 most correlated"
+             " variables given their significant correlation value considering"
+             " the dataset as a frame of reference. Other similar dataset migh"
+             "t show different correlation among different features.")
     if st.checkbox('Show correlation'):
         df_ohe_corr_spearman = (df_ohe
                                 .corr(method='spearman')['SalePrice']

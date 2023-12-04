@@ -43,7 +43,7 @@ def page_pipeline_body():
                 " the button below.\n\n")
     if st.button('ML Model'):
         regression_pipeline = joblib.load(
-            'outputs/ml_pipeline/predict_saleprice/regressor_pipeline.pkl'
+            'outputs/ml_pipeline/predict_saleprice/v1/regressor_pipeline.pkl'
         )
         st.write(regression_pipeline)
     st.write("As you can see from the pipeline I didn't use the standard hyper"
@@ -54,14 +54,16 @@ def page_pipeline_body():
              "fter a hyperparameters tuning I was able to achieve the desired "
              "result. In addition to the regular pipeline development I also d"
              "ecided to try to re-fit the pipeline with the best features foun"
-             "d by the pipeline after the first training run. Unfortunately th"
-             "e additional step did not prove to be more fruitful.")
+             "d by the pipeline model after the first training run. The result"
+             " was the same score so I decided to use the pipeline with less "
+             "features. This allowed me to utilize a fewer amount of input wid"
+             "gets in the predictive interface on page 3 of this dashboard.")
     st.write('---')
     st.markdown("### Model Performance")
     st.image('outputs/ml_pipeline/predict_saleprice/model_performance.png')
     st.markdown("**Train Set r2 Score** --------------- **Test Set r2"
                 " Score**\n\n"
-                "0.89 --------------------------------- 0.75\n\n")
+                "0.89 --------------------------------- 0.79\n\n")
     st.write("In the image above we can see the model performance on train and"
              " test set. We notice that with higher prices the accuracy of the"
              " prediction actually decreases. With this information we should "

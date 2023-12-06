@@ -187,9 +187,11 @@ The process for the hyperparameter optimization was the following:
 
 ### Credits
 
-- In the Correlation study notebook I copied the mask shown below from the
+- In the Correlation study notebook (cell 44) I copied the mask shown below from the
   seaborn documentation:
   "mask = np.triu(np.ones_like(df_spearman_corr, dtype=bool))"
 
 - In the Correlation study notebook (cell 42) I copied the pps score code from
   the Churnometer Walkthrough project.
+
+- In the Model and Evaluation notebook the cells 7, 8, 10, 11, 15, 28, 40

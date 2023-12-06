@@ -120,6 +120,20 @@ In this page a plot for the best feature found by the model is also shown. Along
 - Feature importance
 - Pipeline performance plot. This shows the different performance of the model between the train and test set
 
+## Deployment
+
+### Heroku
+
+- The App live link is [this](https://lydia-predictive-app-d788e0d6fee3.herokuapp.com/)
+- The project was deployed to Heroku using the following steps.
+
+1. Log in to Heroku and create an App
+2. At the Deploy tab, select GitHub as the deployment method.
+3. Select your repository name and click Search. Once it is found, click Connect.
+4. Select the branch you want to deploy, then click Deploy Branch.
+5. Once the deployment has succesfully completed click the 'Open app' button.
+
+
 ## Technologies Used
 
 This is a list of all the different technologies and libraries used in the project:

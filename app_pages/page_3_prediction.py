@@ -70,6 +70,7 @@ def page_prediction_body():
         feature = 'GarageArea'
         widget = st.number_input(
             label='Square Feet of Garage',
+            min_value=0,
             value=int(df[feature].median()),
             format='%d'
         )

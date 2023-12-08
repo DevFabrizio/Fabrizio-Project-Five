@@ -63,21 +63,20 @@ This dataset is sourced at [Kaggle](https://www.kaggle.com/datasets/codeinstitut
 
 ## ML Business Case
 
-### Predict Sale Price for the inherited houses
-
 ### Predict Sale Price
 
 #### Regression Model
 
-- We want an ML model to predict sale price for the inherited houses. The target variable is a continous number.
-- The objective is to provide the customer with a price which will maximize her profit for the properties in her possession.
+- We want an ML model to predict sale price for the inherited houses and other future properties. The target variable is a continous number.
+- The objective is to provide the Lydia with a competitive price which will maximize her profit for the properties in her possession and help her establish prices for future properties she might own or want to acquire.
 - The target variable is the Sale Price
 - The model success metrics are
   - At least 0.75 for R2 score, on train and test set
-  - The ML model is considered a failure if: \* The perfomance for the R2 score is not met.
+  - The ML model is considered a failure if: The perfomance for the R2 score is not met.
 - The output will be a continuous value corresponding to the price for the given property. We are going to run the prediction in the app for Lydia, but she will be able to also input new data and get a prediction of any new property she might acquire in the future.
-- Heuristics: Due to the complexity of the task, a heuristic method for determining a price for the customer properties would be inefficient and definitely closer to guesswork.
-- The training data to fit the model comes from a public dataset.
+- Heuristics: Due to the complexity of the task, a heuristic method for determining a price for the customer properties would be inefficient. Most modern day practices for determing sale prices in the real estate market rely on data analysis and comparison. A ML model will prove more reliable and precise compared to these methods.
+- The training data to fit the model comes from a public dataset. The dataset is also processed in order to make it viable for the mathematical analysis provided by the technologies used in the project. 
+
 
 ## Dashboard Design (Streamlit App User Interface)
 

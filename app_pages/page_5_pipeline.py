@@ -58,9 +58,22 @@ def page_pipeline_body():
     st.write('---')
     st.markdown("### Model Performance")
     st.image('outputs/ml_pipeline/predict_saleprice/model_performance.png')
-    st.markdown("**Train Set r2 Score** --------------- **Test Set r2"
-                " Score**\n\n"
-                "0.89 --------------------------------- 0.79\n\n")
+    metrics = {
+        'R2': {
+            'train_set': 0.89,
+            'test_set': 0.79
+        },
+        'MSE': {
+            'train_set': 653943249.77,
+            'test_set': 1072123302.20
+        },
+        'MAE': {
+            'train_set': 15708.02,
+            'test_set': 21222.55
+        }
+    }
+
+    st.table(data=metrics)
     st.write("In the image above we can see the model performance on train and"
              " test set. We notice that with higher prices the accuracy of the"
              " prediction actually decreases. With this information we should "

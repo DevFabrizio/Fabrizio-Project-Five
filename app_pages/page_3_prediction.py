@@ -87,7 +87,7 @@ def page_prediction_body():
     X_live[feature] = widget
 
     with col3:
-        # this widget maps the acronyms in the dataset to their value using 
+        # this widget maps the acronyms in the dataset to their value using
         # an object
         options = {
             'Good': 'Gd',

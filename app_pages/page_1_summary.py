@@ -56,8 +56,8 @@ def page_summary_body():
             '| YearRemodAdd | Remodel date (same as construction date if'
             ' no remodeling or additions) |\n\n'
             '| SalePrice | Sale Price |')
-    st.markdown("Any additional information about this project can be found in "
-                "the [README](https://github.com/DevFabrizio/Fabrizio-Project"
+    st.markdown("Any additional information about this project can be found in"
+                " the [README](https://github.com/DevFabrizio/Fabrizio-Project"
                 "-Five/blob/main/README.md) file")
     st.markdown('#### How To Use This Dashboard')
     st.info(

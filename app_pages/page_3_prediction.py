@@ -87,12 +87,20 @@ def page_prediction_body():
     X_live[feature] = widget
 
     with col3:
+        # this widget maps the acronyms in the dataset to their value using 
+        # an object
+        options = {
+            'Good': 'Gd',
+            'Typical/Average': 'TA',
+            'Excellent': 'Ex',
+            'Fair': 'Fa'
+        }
         feature = 'KitchenQual'
         widget = st.selectbox(
             label='Quality of the Kitchen',
-            options=df[feature].unique()
+            options=options
         )
-    X_live[feature] = widget
+    X_live[feature] = options[widget]
 
     with col4:
         feature = 'OverallQual'

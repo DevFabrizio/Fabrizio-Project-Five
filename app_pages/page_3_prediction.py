@@ -6,7 +6,8 @@ import joblib
 from src.data_management import (
     load_fe_data,
     load_clean_data,
-    load_inherited_houses_data
+    load_inherited_houses_data,
+    load_pkl_file
 )
 
 
@@ -34,8 +35,9 @@ def page_prediction_body():
     st.write('---')
 
     # Now I will load the regression pipeline and predict the prices
-    regression_pipeline = joblib.load(
-        "outputs/ml_pipeline/predict_saleprice/v1/regressor_pipeline.pkl")
+    regression_pipeline = load_pkl_file(
+        "outputs/ml_pipeline/predict_saleprice/v1/regressor_pipeline.pkl"
+    )
 
     if st.button(label='Show Predicted Prices'):
         most_important_features = [

@@ -3,7 +3,11 @@ import numpy as np
 import pandas as pd
 import joblib
 # pylint: disable=import-error
-from src.data_management import load_fe_data, load_clean_data
+from src.data_management import (
+    load_fe_data,
+    load_clean_data,
+    load_inherited_houses_data
+)
 
 
 def page_prediction_body():
@@ -25,9 +29,7 @@ def page_prediction_body():
     st.markdown("### This is the data frame with the data from the inherited"
                 " houses. We will show the predicted prices for the houses"
                 " below")
-    df_new_houses = pd.read_csv(
-        "inputs/datasets/raw/house-price-20211124T154130Z-001"
-        "/house-price/inherited_houses.csv")
+    df_new_houses = load_inherited_houses_data()
     st.dataframe(data=df_new_houses)
     st.write('---')
 

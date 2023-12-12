@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+# pylint: disable=import-error
+from src.data_management import load_fe_data
 
 # This function contains the content of the page. It will be called in the
 # app.py file
@@ -26,10 +28,7 @@ def page_correlation_body():
     st.markdown("#### Spearman Correlation")
     st.write('---')
     # This segment of code load shows the one hot encoded dataset. (10 samples)
-    df_ohe = pd.read_csv(
-        'outputs/'
-        'dataset/collection/feature_engineered_dataset.csv'
-    )
+    df_ohe = load_fe_data()
     if st.checkbox('Dataset'):
         st.write('These are 10 rows from the pre-processed dataset')
         st.write(df_ohe.head(10))

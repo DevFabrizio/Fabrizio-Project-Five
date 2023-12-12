@@ -2,6 +2,8 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import joblib
+# pylint: disable=import-error
+from src.data_management import load_fe_data, load_clean_data
 
 
 def page_prediction_body():
@@ -16,9 +18,8 @@ def page_prediction_body():
     st.write('---')
     st.write('The following is an overview of the dataset. At the top you will'
              " find the name of the columns with the respective values.")
-    df = pd.read_csv(
-        'outputs/dataset/collection/clean_dataset.csv')
-    st.dataframe(data=df)
+    df = load_clean_data()
+    st.write(df)
     st.write('---')
 
     st.markdown("### This is the data frame with the data from the inherited"

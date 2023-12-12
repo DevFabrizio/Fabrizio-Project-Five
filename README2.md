@@ -44,6 +44,8 @@ This dataset is sourced at [Kaggle](https://www.kaggle.com/datasets/codeinstitut
   - A Correlation study can help in this investigation
 - 2 - Within the features we should be able to identify a hierarchy for the correlation of the features
   - A Correlation study can help in this investigation
+- 3 - The features containing 'square feet' as a metric could be strong predictors of Sale Price
+    - A ML model (regression) can identify the best sale price predicting features
 
 ## The rationale to map the business requirements to the Data Visualizations and ML tasks
 

@@ -22,7 +22,7 @@ def load_fe_data():
 @st.cache(suppress_st_warning=True, allow_output_mutation=True)
 def load_inherited_houses_data():
     df = pd.read_csv(
-        "/workspaces/Fabrizio-Project-Five/inputs/datasets/raw/"
+        "workspaces/Fabrizio-Project-Five/inputs/datasets/raw/"
         "house-price-20211124T154130Z-001/house-price/inherited_houses.csv")
     return df
 
